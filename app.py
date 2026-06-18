@@ -1,4 +1,8 @@
 import streamlit as st
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
@@ -8,13 +12,12 @@ import os
 import tempfile
 
 # ------------------ CONFIG ------------------
-os.environ["GROQ_API_KEY"] = "..."
+groq_api_key = os.getenv("GROQ_API_KEY")
 
 llm = ChatGroq(
     model="llama-3.3-70b-versatile",
-    api_key=os.environ["GROQ_API_KEY"]
+    api_key=groq_api_key
 )
-
 st.title("📚 Multi-PDF RAG Chatbot")
 
 # ------------------ SESSION STATE ------------------
