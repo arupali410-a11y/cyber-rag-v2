@@ -1,0 +1,9 @@
+Ransomware is a malware that locks files and demands payment.
+
+Phishing is a cyber attack where attackers trick users into revealing passwords.
+
+Malware is software designed to damage or exploit systems.
+
+A firewall is a network security system that monitors incoming and outgoing traffic.
+
+DDoS attack is when multiple systems flood a server to make it unavailable.
