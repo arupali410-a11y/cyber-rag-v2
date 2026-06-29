@@ -50,11 +50,12 @@ if uploaded_files and st.button("Process PDFs"):
 
     # Split into chunks
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1000,
-        chunk_overlap=200
+        chunk_size=2500,
+        chunk_overlap=100
     )
 
     chunks = splitter.split_documents(all_docs)
+    st.write(f"Total chunks: {len(chunks)}")
 
     # Embeddings
     embeddings = HuggingFaceEmbeddings(
